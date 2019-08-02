@@ -1,6 +1,9 @@
 // make websocket connection
 
-var socket = io.connect('http://localhost:4000');
+// process.env.PORT||4000
+
+// var socket = io.connect('http://localhost:4000');
+var socket = io.connect('http://localhost:' + process.env.PORT||4000);
 
 // query dom
 
