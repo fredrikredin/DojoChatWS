@@ -18,39 +18,39 @@
 
 <body>
 
-    <div class="container">
+    <div>
 
         <!-- top navigation bar -->
         <nav>
-            <div class="nav-wrapper">
-                <!-- <a href="#!" class="brand-logo center">DojoChat</a> -->
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo left"><i class="material-icons">chat</i>DojoChat</a>
             </div>
         </nav>
-
+        
         <!-- page layout -->
-        <div class="row">
-
-            <!-- side panel -->
-            <div class="col s5">
-                <h4>DojoChat</h4>
-                <p>Welcome to DojoChat - a simple chat application on Node using Express and Socket.IO. Have fun!
-                </p>
-            </div>
-
+        <div class="container">
+            
+            <p><strong>Welcome to DojoChat!</strong> - a simple chat app on Node using Socket.io. <i>Have fun!</i></p>
+          
             <br>
 
             <!-- main page content  -->
-            <div class="col s7">
+            <div class="col s12">
 
                 <!-- username -->
                 <!-- <input type="text" id="chatUsername" placeholder="Pick a username"> -->
 
-                <!-- join chat div -->
-                <div class="input-field">
-                    <input id="usernameInput" placeholder="Choose a username" type="text" class="validate" value="Fredrik">
-                    <label for="usernameInput">User Name</label>
-                    <!-- <button id="joinBtn" class="waves-effect waves-light btn" type="button">Join chat</button> -->
+                <!-- join chat -->
+                <div style="overflow: hidden;">
+                    <div class="input-field" style="float: left; width: 60%;">
+                        <input id="usernameInput" placeholder="Choose a username" type="text" class="validate">
+                        <label for="usernameInput">User Name</label>
+                    </div>
+
+                    <button id="joinBtn" class="waves-effect waves-light btn" type="button"
+                        style="float: right; width: 20%;">Join chat</button>
                 </div>
+
 
                 <br>
 
@@ -62,10 +62,15 @@
 
                 <br>
 
-                <div class="input-field">
-                    <input id="msgInput" placeholder="Enter chat message..." type="text" class="validate">
-                    <label for="msgInput">Message</label>
-                    <button id="sendBtn" class="waves-effect waves-light btn" type="button">Send</button>
+                <!-- send message -->
+                <div style="overflow: hidden;">
+                    <div class="input-field" style="float: left; width: 60%;">
+                        <input id="msgInput" placeholder="Enter chat message..." type="text" class="validate">
+                        <label for="msgInput">Message</label>
+                    </div>
+
+                    <button id="sendBtn" class="waves-effect waves-light btn" type="button"
+                        style="float: right; width: 25%;">Send</button>
                 </div>
             </div>
         </div>
@@ -74,11 +79,7 @@
         <!-- footer -->
         <footer class="page-footer">
             <div class="footer-copyright">
-                <div class="container">
-                    © 2019 Copyright CoderDojo Stockholm
-                    <a class="grey-text text-lighten-4 right" href="http://coderdojostockholm.se/">CoderDojo
-                        Stockholm</a>
-                </div>
+                <div class="container"> © 2019 Copyright</div>
             </div>
         </footer>
     </div>
