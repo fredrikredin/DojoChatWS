@@ -17,9 +17,14 @@ var io = socket(server);
 io.on('connection', function(socket) {
     console.log('made socket connection with client:', socket.id);
 
-    socket.on('chatMessage', function (data) {
-        console.log('forwarding chatMessage event from', data.username);
-        
-        io.sockets.emit('chatMessage', data);
+    // listen for events
+    socket.on('message', function (data) {
+        console.log('forwarding message event from ', data.username);
+        io.sockets.emit('message', data); // emit to all connected sockets
     });
-})
+    
+    socket.on('typing', function (data) {
+        console.log('forwarding typing event from ', data);
+        socket.broadcast.emit('typing', data); // emit to all sockets other than 'socket' (aka broadcast)
+    });
+});
