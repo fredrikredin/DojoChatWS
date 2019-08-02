@@ -17,14 +17,18 @@ var io = socket(server);
 io.on('connection', function(socket) {
     console.log('made socket connection with client:', socket.id);
 
-    // listen for events
+    // listen for emitted events
+
+    socket.on('join', function (data) {
+        io.sockets.emit('join', data); // emit to all connected sockets
+    });
+
     socket.on('message', function (data) {
-        console.log('forwarding message event from ', data.username);
+        console.log('received message event from', data.user);
         io.sockets.emit('message', data); // emit to all connected sockets
     });
     
     socket.on('typing', function (data) {
-        console.log('forwarding typing event from ', data);
         socket.broadcast.emit('typing', data); // emit to all sockets other than 'socket' (aka broadcast)
     });
 });
