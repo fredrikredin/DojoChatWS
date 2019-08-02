@@ -24,7 +24,6 @@ io.on('connection', function(socket) {
     });
 
     socket.on('message', function (data) {
-        console.log('received message event from', data.user);
         io.sockets.emit('message', data); // emit to all connected sockets
     });
     
