@@ -16,4 +16,10 @@ var io = socket(server);
 
 io.on('connection', function(socket) {
     console.log('made socket connection with client:', socket.id);
+
+    socket.on('chatMessage', function (data) {
+        console.log('forwarding chatMessage event from', data.username);
+        
+        io.sockets.emit('chatMessage', data);
+    });
 })

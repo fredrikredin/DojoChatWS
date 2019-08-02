@@ -30,23 +30,44 @@
         <!-- page layout -->
         <div class="row">
 
-            <!-- navigation panel -->
+            <!-- side panel -->
             <div class="col s5">
                 <h4>DojoChat</h4>
-
                 <p>Welcome to DojoChat - a simple chat application on Node using Express and Socket.IO. Have fun!
                 </p>
             </div>
 
+            <br>
+
             <!-- main page content  -->
             <div class="col s7">
 
-                <input type="text" name="username" id="username" placeholder="Pick a username">
+                <!-- username -->
+                <!-- <input type="text" id="chatUsername" placeholder="Pick a username"> -->
 
-                <button class="waves-effect waves-light btn" type="button">Join chat</button>
-                <button class="waves-effect waves-light btn" type="button" disabled>Leave chat</button>
+                <!-- join chat div -->
+                <div class="input-field">
+                    <input id="usernameInput" placeholder="Choose a username" type="text" class="validate" value="Fredrik" >
+                    <label for="usernameInput">User Name</label>
+                    <button id="joinBtn" class="waves-effect waves-light btn" type="button">Join chat</button>
+                </div>
+
+                <br>
+                <br>
+
+                <div id="chatFeed"></div>
+
+                <br>
+                <br>
+
+                <div class="input-field">
+                    <input id="msgInput" placeholder="Enter chat message..."  type="text" class="validate">
+                    <label for="msgInput">Message</label>
+                    <button id="sendBtn" class="waves-effect waves-light btn" type="button">Send</button>
+                </div>
             </div>
         </div>
+
 
         <!-- footer -->
         <footer class="page-footer">
@@ -58,8 +79,6 @@
                 </div>
             </div>
         </footer>
-
-
     </div>
 
     <!-- import jquery, materialize, socket.io at end of body for optimized loading-->
@@ -68,7 +87,8 @@
 
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js" integrity="sha256-i2Orhi397HWPn93rsCUTW8HBoso65vY/VNTllm9Kuqo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"
+        integrity="sha256-i2Orhi397HWPn93rsCUTW8HBoso65vY/VNTllm9Kuqo=" crossorigin="anonymous"></script>
 
     <script src="/main.js"></script>
 </body>
