@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=ggVsXljT0MI
 
 npm init
 npm install express --save
+npm install socket.io --save
 npm install nodemon -g
-% npm install materialize-css@next
 
 nodemon index.js // start app
