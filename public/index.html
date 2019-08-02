@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DojoChat WS</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- top navigation bar -->
+        <nav>
+            <div class="nav-wrapper">
+                <!-- <a href="#!" class="brand-logo center">DojoChat</a> -->
+            </div>
+        </nav>
+
+        <!-- page layout -->
+        <div class="row">
+
+            <!-- navigation panel -->
+            <div class="col s5">
+                <h4>DojoChat</h4>
+
+                <p>Welcome to DojoChat - a simple chat application on Node using Express and Socket.IO. Have fun!
+                </p>
+            </div>
+
+            <!-- main page content  -->
+            <div class="col s7">
+
+                <input type="text" name="username" id="username" placeholder="Pick a username">
+
+                <button class="waves-effect waves-light btn" type="button">Join chat</button>
+                <button class="waves-effect waves-light btn" type="button" disabled>Leave chat</button>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2019 Copyright CoderDojo Stockholm
+                    <a class="grey-text text-lighten-4 right" href="http://coderdojostockholm.se/">CoderDojo
+                        Stockholm</a>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+    <!-- import jquery and materialize at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
