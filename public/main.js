@@ -1,9 +1,7 @@
 // make websocket connection
-
-// process.env.PORT||4000
-
-// var socket = io.connect('http://localhost:4000');
-var socket = io.connect('http://localhost:' + process.env.PORT||4000);
+//var socket = io.connect('http://localhost:4000');
+//var socket = io.connect('https://dojochat.azurewebsites.net'); // process.env.PORT||4000
+var socket = io.connect(window.location.href); 
 
 // query dom
 
@@ -19,6 +17,7 @@ var sendBtn = document.getElementById('sendBtn');
 // variables
 
 let user = "";
+sendBtn.disabled = true;
 
 // emit events to server
 
@@ -35,6 +34,7 @@ joinBtn.addEventListener('click', function () {
 
         username.value = user;
         username.disabled = true;
+        sendBtn.disabled = false;
         joinBtn.innerText = 'Leave chat';
         return;
     }
@@ -49,6 +49,7 @@ joinBtn.addEventListener('click', function () {
         user = "";
         username.value = "";
         username.disabled = false;
+        sendBtn.disabled = true;
         joinBtn.innerText = 'Join chat';
     }
 });
@@ -88,6 +89,10 @@ window.addEventListener("beforeunload", function (e) {
 }, false);
 
 // listen for emitted events from server
+
+socket.on('connect', function () {
+    console.log('connection made to server ' + window.location.href);
+})
 
 socket.on('join', function (data) {
     if (data.hasJoined) {
