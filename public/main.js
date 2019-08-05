@@ -69,7 +69,15 @@ sendBtn.addEventListener('click', function () {
 
 message.addEventListener('keyup', function (event) {
 
-    if (user != "") {
+    if (user != "") 
+    {
+        if (event.keyCode === 13)
+        {
+            event.preventDefault();
+            sendBtn.click();
+            return;
+        }
+
         socket.emit('typing',
             {
                 user: user,
